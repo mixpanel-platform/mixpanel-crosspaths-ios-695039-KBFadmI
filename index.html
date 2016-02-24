@@ -207,7 +207,7 @@ function main() {
         to_date: params.to_date,
     })
     .filter(function(event) { return event["name"] == params.event; })
-    .groupBy(['mp_country_code'], function(accumulators, items) {
+    .groupBy([function(item){return item.properties['mp_country_code']}], function(accumulators, items) {
         var ret = items.length;
         for (var i = 0; i < accumulators.length; ++i) {
             ret += accumulators[i];
