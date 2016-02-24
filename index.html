@@ -230,7 +230,7 @@ function main() {
     })
     // Group by email domain
     .groupBy([function(event) {
-            email = event["Email"];
+            email = event.properties["Email"];
             if (!email) return undefined;
             pos = email.indexOf('@');
             if (pos < 0) return undefined;
