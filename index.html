@@ -372,7 +372,7 @@ function main() {
       state = state || {
         last_day_active: new Date(0),
         num_days_active: 0,
-        city: events[0]['$city'],
+        city: events[0].properties['$city'],
       };
       for (var i = 0; i < events.length; ++i) {
         var event_time = new Date(events[i]['time']);
