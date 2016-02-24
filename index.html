@@ -272,8 +272,8 @@ function main() {
                 }
             }
             for (var i = 0; i < events.length; ++i) {
-                var w = events[i]["$screen_width"];
-                var h = events[i]["$screen_height"];
+                var w = events[i].properties["$screen_width"];
+                var h = events[i].properties["$screen_height"];
                 if (w * h > ret.total) {
                     ret = { height : h, width : w, total : w * h};
                 }
